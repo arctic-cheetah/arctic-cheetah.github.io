@@ -3,10 +3,9 @@ let geditWindow = null
 // let closeBtn = document.getElementsByClassName("close")[0];
 let minBtn = document.getElementsByClassName("minimise")[0];
 let maxBtn = document.getElementsByClassName("maximise")[0];
-
-// let maximiseBtn = document.getElementsByClassName("minimise")[0];
 let geditIcon = document.getElementsByClassName("gedit-icon");
 let maximised = false;
+let previousWindowPosition = { x: 0, y: 0 };
 
 
 function dragWindow(e) {
@@ -83,6 +82,8 @@ maximiseBtn = (e) => {
         taskbarBottom = document.getElementById("taskbar-bottom");
         taskbarTopHeight = getComputedStyle(taskbarTop).height
         taskbarBottomHeight = getComputedStyle(taskbarBottom).height
+        previousWindowPosition.x = currGeditWindow.style.left;
+        previousWindowPosition.y = currGeditWindow.style.top;
         currGeditWindow.style.height = `calc(100vh - ${taskbarBottomHeight} - ${taskbarTopHeight} - 5px)`;
         currGeditWindow.style.width = "100%";
         currGeditWindow.style.top = "0px";
@@ -92,7 +93,8 @@ maximiseBtn = (e) => {
     else {
         currGeditWindow.style.height = "calc(100vh - 5vh - 100px)";
         currGeditWindow.style.width = "650px";
-
+        currGeditWindow.style.left = previousWindowPosition.x;
+        currGeditWindow.style.top = previousWindowPosition.y;
     }
     maximised = !maximised;
 };
@@ -109,8 +111,6 @@ reopenGedit = (e) => {
 };
 minBtn.addEventListener("click", closeBtn);
 maxBtn.addEventListener("click", maximiseBtn);
-
-
 
 
 // document.addEventListener("click", (e) => {
