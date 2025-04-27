@@ -118,7 +118,7 @@ body {
     box-shadow: 1px 1px 1px 0.5px #555;
     border-left: 1px solid #d3d1c5;
     border-top: 1px solid #d3d1c5;
-    padding: 0 0 0 3px;
+    padding: 0 4px 0 4px;
     cursor: pointer;
     text-decoration: none;
     color: #000000;
@@ -289,4 +289,19 @@ body {
     padding: 2px;
     margin-left: auto;
     background: #41423c;
+    display: flex;
+    direction: row;
+    align-content: flex-start;
+    gap: 15%;
+}
+
+.debian-box-inner {
+    width: 20%;
+    height: 75%;
+    border: 3px solid #616059;
+    padding: 2px;
+    background: #41423c;
+    display: flex;
+    direction: row;
+    align-content: flex-start;
 }
