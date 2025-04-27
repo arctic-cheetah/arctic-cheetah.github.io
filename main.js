@@ -86,7 +86,7 @@ maximiseBtn = (e) => {
         previousWindowPosition.y = currGeditWindow.style.top;
         currGeditWindow.style.height = `calc(100vh - ${taskbarBottomHeight} - ${taskbarTopHeight} - 5px)`;
         currGeditWindow.style.width = "100%";
-        currGeditWindow.style.top = "0px";
+        currGeditWindow.style.top = "20px";
         currGeditWindow.style.left = "0px";
 
     }

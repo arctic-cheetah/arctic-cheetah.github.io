@@ -28,7 +28,7 @@
 }
 
 #taskbar {
-    height: var(--taskbar-size);
+    height: calc(var(--taskbar-size) + 20px);
     background: var(--bar-colour);
     width: 100%;
     position: absolute;
@@ -36,7 +36,9 @@
     top: 0px;
     left: 0px;
     display: flex;
+    flex-direction: row;
     gap: 5px;
+    align-items: center;
 }
 
 #taskbar-bottom {
@@ -142,6 +144,7 @@ body {
     flex-direction: column;
     padding: 0px 3px 3px 3px;
     cursor: default;
+    margin-left: auto;
 }
 
 
