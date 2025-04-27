@@ -2,11 +2,70 @@
 <html>
 
 <head>
-    Hello world
+    <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
+<body class="root">
+    <div id="taskbar">
+        <img class="gnome-btn"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAOVBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADLcPMfAAAAE3RSTlMARrHXy2RU/xIgOZqFdi++7PcJM/PmrAAAAMZJREFUeAFt0AUOgDAQRNGpftzuf1ecDSW8WHVNf5wPMekjBy9JnkOlQg00Usv3MnVSD2RVnIJMhl4dUKvnNMi0MMrB9ETtZJSOS03k+7LVrWKWzn3lJDVA0qOHXkOodRvyItPAaOcpORVG4hkhcBkXvXRO6sBMKiwTb0NxN1OoyqyFsZx4oUzZ8xZVaHlJKnUY69E4Hk7GcJnOb03Kf3Hr48p6MTMHK87rbbDm40/qzGHq/btT4zDzoq8qcgmLfgxtYB6zzAbG0QtBuP53ggAAAABJRU5ErkJggg==">
+        <div class="taskbar-btn-top gedit-icon" onclick="reopenGedit(event)">
+            Gedit
+            <img id="gedit-icon"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACdElEQVR4AZXSQ3gdUQAF4LevzV27qd2u69i2bdu2jdqObdu28RjzdDJlnMz3Xd/zjy7l6dOnZAkND3SIjo2YItqcjdqQsAD7P3tHL13aSz1/fv9Kn5KSFq+dlpm03NhShzHqCDZrSysLkZQat9whwJdGv3RpnnblyjRRNCkr4enpKXj7eaCmrhKePm4bteR6nKcz3poYoMDMFCNubqBdvjxNSUz5gRUgMioCsvLSsLKxWtfKKcgg2lkP0RFBqKmtho+7E3IN9EG9fHmS8vX7RxLo6+tBS0sT2ttb0dzcuKpN81VDpKcZ/P3c8OHDW9jZ2+KjtsYy7eJFKcrbDy9JgEYbX1+oY2gPlUG77RUsZGuj5aUUPNwd4O/lQgCqb8iPGPsi6i+QkZn2t9CJcYnjU3Q4XCfDU594MBwtBF83K0TYKZNhEggl3usPQKdTwWDQwGRQ0R4gjA7nm1jI+RMWRK3mSYRZK+FPmAT8ArwwMzNNBOnIys4Ai8lAuf0DdBLhxRwtMjwULYA6rZOgVyfAxt5yNeDm4YzZ2VlMTLAwOTmBseJoDHxUxVJjLMhwFD/qiDsPl8WBxWLBwFhvNWDnYI35+TnyNXLzstEXp4OJpjgAADXBBjUax/E12BodHR0YHR2FprbaasDM0oQA5omnmEFFfgJCzdhBzfHF0DcN9L4QQcm3KNTX16Orqws0Gg3KqoqrAX1DHSwuLmBhYR7C7Pdw7uwhZMXooDQ5BuUl+ejs7ASTycTS0hIAkIdrFaCuqYLl5SVyQy1x3hkMBoEtYLNLVFx4NSCvKLucmZ2GIuJu25X0rFQIiwourwKu3r6L3Zb/gZ9CBq9w3yLzeAAAAABJRU5ErkJggg==">
+        </div>
+        <div class="taskbar-btn-top">
+            Github
+            <img class="github-icon" src="./Octicons-mark-github.svg.png">
+        </div>
+        <div class="taskbar-btn-top">
+            LinkedIn
+            <img class="linkedIn-icon"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=">
+        </div>
+    </div>
+    <div id="window">
+        <div id="window-title" onpointerdown="dragMouseDown()">
+            <img id="gedit-icon"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACdElEQVR4AZXSQ3gdUQAF4LevzV27qd2u69i2bdu2jdqObdu28RjzdDJlnMz3Xd/zjy7l6dOnZAkND3SIjo2YItqcjdqQsAD7P3tHL13aSz1/fv9Kn5KSFq+dlpm03NhShzHqCDZrSysLkZQat9whwJdGv3RpnnblyjRRNCkr4enpKXj7eaCmrhKePm4bteR6nKcz3poYoMDMFCNubqBdvjxNSUz5gRUgMioCsvLSsLKxWtfKKcgg2lkP0RFBqKmtho+7E3IN9EG9fHmS8vX7RxLo6+tBS0sT2ttb0dzcuKpN81VDpKcZ/P3c8OHDW9jZ2+KjtsYy7eJFKcrbDy9JgEYbX1+oY2gPlUG77RUsZGuj5aUUPNwd4O/lQgCqb8iPGPsi6i+QkZn2t9CJcYnjU3Q4XCfDU594MBwtBF83K0TYKZNhEggl3usPQKdTwWDQwGRQ0R4gjA7nm1jI+RMWRK3mSYRZK+FPmAT8ArwwMzNNBOnIys4Ai8lAuf0DdBLhxRwtMjwULYA6rZOgVyfAxt5yNeDm4YzZ2VlMTLAwOTmBseJoDHxUxVJjLMhwFD/qiDsPl8WBxWLBwFhvNWDnYI35+TnyNXLzstEXp4OJpjgAADXBBjUax/E12BodHR0YHR2FprbaasDM0oQA5omnmEFFfgJCzdhBzfHF0DcN9L4QQcm3KNTX16Orqws0Gg3KqoqrAX1DHSwuLmBhYR7C7Pdw7uwhZMXooDQ5BuUl+ejs7ASTycTS0hIAkIdrFaCuqYLl5SVyQy1x3hkMBoEtYLNLVFx4NSCvKLucmZ2GIuJu25X0rFQIiwourwKu3r6L3Zb/gZ9CBq9w3yLzeAAAAABJRU5ErkJggg==">
+            Gedit
+            <div id="window-controls">
+                <div id="window-minimise" class="window-btn minimise">
+                    <img src="./window-minimize-symbolic.svg">
+                </div>
+                <div id="window-maximise" class="window-btn maximise">
+                    <img src="./window-maximize-symbolic.svg">
+                </div>
+                <div id="window-close" class="window-btn close" onclick="closeBtn(event)">
+                    <img src="./window-close-symbolic.svg">
+                </div>
+            </div>
+        </div>
+        <div id="window-options">
+            <p class="window-option">Quit</p>
+            <p class="window-option">Save</p>
+            <p class="window-option">Load</p>
+            <p class="window-option">Settings</p>
+        </div>
+        <div id="window-content-box">
+            G'day world!
+        </div>
+    </div>
 
+    <div id="taskbar-bottom">
+        <p class="taskbar-clock" id="clock">
+            Test <br> Time
+        </p>
+        <div class="taskbar-btn-bottom">
+            Resume
+        </div>
+        <div class="taskbar-btn-bottom gedit-icon" onclick="reopenGedit(event)">
+            Gedit
+            <img id="gedit-icon"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACdElEQVR4AZXSQ3gdUQAF4LevzV27qd2u69i2bdu2jdqObdu28RjzdDJlnMz3Xd/zjy7l6dOnZAkND3SIjo2YItqcjdqQsAD7P3tHL13aSz1/fv9Kn5KSFq+dlpm03NhShzHqCDZrSysLkZQat9whwJdGv3RpnnblyjRRNCkr4enpKXj7eaCmrhKePm4bteR6nKcz3poYoMDMFCNubqBdvjxNSUz5gRUgMioCsvLSsLKxWtfKKcgg2lkP0RFBqKmtho+7E3IN9EG9fHmS8vX7RxLo6+tBS0sT2ttb0dzcuKpN81VDpKcZ/P3c8OHDW9jZ2+KjtsYy7eJFKcrbDy9JgEYbX1+oY2gPlUG77RUsZGuj5aUUPNwd4O/lQgCqb8iPGPsi6i+QkZn2t9CJcYnjU3Q4XCfDU594MBwtBF83K0TYKZNhEggl3usPQKdTwWDQwGRQ0R4gjA7nm1jI+RMWRK3mSYRZK+FPmAT8ArwwMzNNBOnIys4Ai8lAuf0DdBLhxRwtMjwULYA6rZOgVyfAxt5yNeDm4YzZ2VlMTLAwOTmBseJoDHxUxVJjLMhwFD/qiDsPl8WBxWLBwFhvNWDnYI35+TnyNXLzstEXp4OJpjgAADXBBjUax/E12BodHR0YHR2FprbaasDM0oQA5omnmEFFfgJCzdhBzfHF0DcN9L4QQcm3KNTX16Orqws0Gg3KqoqrAX1DHSwuLmBhYR7C7Pdw7uwhZMXooDQ5BuUl+ejs7ASTycTS0hIAkIdrFaCuqYLl5SVyQy1x3hkMBoEtYLNLVFx4NSCvKLucmZ2GIuJu25X0rFQIiwourwKu3r6L3Zb/gZ9CBq9w3yLzeAAAAABJRU5ErkJggg==">
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 
 </html>
