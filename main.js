@@ -66,7 +66,6 @@ setInterval(updateTime, 1000);
 //     geditWindow = res;
 //     res.remove();
 // });
-
 // NOTE: Event listener's added via the onClick attribute in HTML are persistent!
 closeBtn = (e) => {
     res = e.target.closest("#window");
@@ -88,7 +87,6 @@ maximiseBtn = (e) => {
         currGeditWindow.style.width = "100%";
         currGeditWindow.style.top = "20px";
         currGeditWindow.style.left = "0px";
-
     }
     else {
         currGeditWindow.style.height = "calc(100vh - 5vh - 100px)";

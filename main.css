@@ -3,6 +3,7 @@
     --window-title-margin: 30px;
     --window-title-size: 25px;
     --taskbar-size: 30px;
+    --taskbar-btn-bottom: 30px;
     display: block;
     --bar-colour: rgb(123, 123, 123);
     margin: 0px;
@@ -50,7 +51,8 @@
     bottom: 0px;
     left: 0px;
     display: flex;
-    gap: 5px;
+    align-items: center;
+    gap: 10px;
 }
 
 body {
@@ -109,15 +111,17 @@ body {
 }
 
 .taskbar-btn-top {
-    height: 20px;
+    height: var(--taskbar-size);
     margin: 3px 5px 5px 0px;
     align-items: center;
     display: flex;
     box-shadow: 1px 1px 1px 0.5px #555;
     border-left: 1px solid #d3d1c5;
     border-top: 1px solid #d3d1c5;
-    padding: 0 3px 0 3px;
+    padding: 0 0 0 3px;
     cursor: pointer;
+    text-decoration: none;
+    color: #000000;
 }
 
 .taskbar-btn-top:hover {
@@ -149,8 +153,8 @@ body {
 
 
 .taskbar-btn-bottom {
-    height: 30px;
-    margin: 7.5px 5px 5px 5px;
+    height: var(--taskbar-size);
+    /* margin: 7.5px 5px 5px 5px; */
     border-left: 1px solid #d3d1c5;
     border-top: 1px solid #d3d1c5;
     box-shadow: 1px 1px 1px 0.5px #555;
@@ -159,7 +163,11 @@ body {
     flex-direction: row;
     padding: 0 3px 0 3px;
     cursor: pointer;
+    text-decoration: none;
+}
 
+.taskbar-btn-bottom:nth-child(1) {
+    margin-left: 10px;
 }
 
 .taskbar-btn-bottom:hover {
@@ -272,4 +280,13 @@ body {
 
 .close {
     background: #ff0000;
+}
+
+.debian-box {
+    width: 10%;
+    height: 75%;
+    border: 3px solid #616059;
+    padding: 2px;
+    margin-left: auto;
+    background: #41423c;
 }
