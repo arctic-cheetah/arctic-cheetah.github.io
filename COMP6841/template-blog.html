@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Notes</title>
+    <link rel="stylesheet" href="./COMP6841/comp6841.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Academic Notes</h1>
+        <p class="subtitle">Course materials and personal reflections</p>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/courses">Courses</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="post">
+            <h2 class="post-title">Introduction to Computer Science</h2>
+            <span class="post-date">Published on March 15, 2023</span>
+
+            <div class="post-content">
+                <p>These are my notes from the introductory computer science course covering fundamental concepts.</p>
+
+                <h2>Data Structures</h2>
+                <p>We covered several important data structures:</p>
+                <ul>
+                    <li>Arrays</li>
+                    <li>Linked Lists</li>
+                    <li>Stacks and Queues</li>
+                    <li>Binary Trees</li>
+                </ul>
+
+                <h3>Example Code</h3>
+                <p>Here's an example of implementing a stack in Python:</p>
+                <pre><code>class Stack:
+    def __init__(self):
+        self.items = []
+    
+    def push(self, item):
+        self.items.append(item)
+    
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+    
+    def size(self):
+        return len(self.items)</code></pre>
+
+                <h2>Algorithms</h2>
+                <p>We also discussed basic algorithms including:</p>
+                <ol>
+                    <li>Sorting algorithms (Bubble, Merge, Quick)</li>
+                    <li>Searching algorithms (Linear, Binary)</li>
+                    <li>Basic graph algorithms</li>
+                </ol>
+            </div>
+        </article>
+
+        <article class="post">
+            <h2 class="post-title">Mathematics for Computer Science</h2>
+            <span class="post-date">Published on February 28, 2023</span>
+
+            <div class="post-content">
+                <p>Key mathematical concepts essential for computer science.</p>
+
+                <h2>Discrete Mathematics</h2>
+                <p>Topics included:</p>
+                <ul>
+                    <li>Set theory</li>
+                    <li>Propositional logic</li>
+                    <li>Graph theory basics</li>
+                    <li>Combinatorics</li>
+                </ul>
+
+                <h2>Probability</h2>
+                <p>Basic probability concepts with applications to algorithms.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Academic Notes. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
