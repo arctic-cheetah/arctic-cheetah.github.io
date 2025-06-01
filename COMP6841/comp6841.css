@@ -1,4 +1,8 @@
 /* Reset and Base Styles */
+.root {
+    --post-padding: 25px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -72,6 +76,10 @@ nav a:hover {
     font-size: 0.9rem;
     margin-bottom: 15px;
     display: block;
+}
+
+ul {
+    padding-left: calc(var(--post-padding) + 10px);
 }
 
 .post-content {
